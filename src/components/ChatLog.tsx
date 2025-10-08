@@ -24,8 +24,7 @@ export function ChatLog({ messages, isLoading = false }: ChatLogProps) {
   return (
     <div
       ref={containerRef}
-      className="flex-1 overflow-y-auto p-4 space-y-4 bg-white rounded-lg shadow-inner focus:outline-none focus:ring-2"
-      style={{ "--tw-ring-color": "#1D71B8" } as React.CSSProperties}
+      className="flex-1 overflow-y-auto p-4 space-y-4 bg-white rounded-lg shadow-inner focus:outline-none"
       role="log"
       aria-live="polite"
       aria-label="Chat conversation"
