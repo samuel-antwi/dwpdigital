@@ -1,11 +1,10 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <header
-      className="text-white shadow-lg"
-      style={{ backgroundColor: "#1D71B8" }}
-    >
+    <header className="text-white shadow-lg bg-[#1D71B8]">
       <div className="max-w-4xl mx-auto px-4 py-4">
         <Link
           href="/"
