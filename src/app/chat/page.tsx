@@ -62,9 +62,9 @@ export default function ChatPage() {
 
   return (
     <ErrorBoundary>
-      <div className="flex flex-col flex-1 bg-gray-50 overflow-hidden">
+      <main className="flex flex-col flex-1 bg-gray-50 overflow-hidden">
+        <h1 className="sr-only">GOV.UK Chat - Career Guidance Assistant</h1>
         <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full overflow-hidden px-4 pt-4">
-          <h1 className="sr-only">GOV.UK Chat - Career Guidance Assistant</h1>
           <ChatLog messages={messages} isLoading={isLoading} />
         </div>
         <div className="max-w-4xl mx-auto mt-4 w-full px-4">
@@ -73,7 +73,7 @@ export default function ChatPage() {
             disabled={isLoading}
           />
         </div>
-      </div>
+      </main>
     </ErrorBoundary>
   );
 }

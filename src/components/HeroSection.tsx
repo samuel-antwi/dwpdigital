@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HeroItem() {
   return (
     <div className="flex-1 flex items-center justify-center p-8">
-      <main className="max-w-2xl w-full text-center space-y-8">
+      <div className="max-w-2xl w-full text-center space-y-8">
         <div className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
             Welcome to GOV.UK Chat
@@ -25,7 +25,7 @@ export default function HeroItem() {
             Start Chatting
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
