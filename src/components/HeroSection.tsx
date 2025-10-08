@@ -16,7 +16,7 @@ export default function HeroItem() {
         </div>
         <div>
           <Link
-            href="/"
+            href="/chat"
             className="inline-block px-8 py-4 text-white font-semibold text-lg rounded-lg
                        focus:outline-none focus:ring-4 transition-colors duration-200
                        hover:opacity-90 active:opacity-100"
