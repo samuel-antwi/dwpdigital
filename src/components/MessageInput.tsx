@@ -116,7 +116,7 @@ export function MessageInput({
           <button
             type="submit"
             disabled={disabled || isOverLimit}
-            className="px-6 py-2 text-white font-semibold rounded-lg
+            className="px-6 py-2 cursor-pointer text-white font-semibold rounded-lg
                      focus:outline-none focus:ring-4
                      disabled:bg-gray-400 disabled:cursor-not-allowed
                      transition-colors duration-200"
