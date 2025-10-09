@@ -1,8 +1,6 @@
-"use client";
-
 import Link from "next/link";
 
-export default function HeroItem() {
+export default function HeroSection() {
   return (
     <div className="flex-1 flex items-center justify-center p-8">
       <div className="max-w-2xl w-full text-center space-y-8">
