@@ -335,9 +335,8 @@ For detailed information about assumptions made during development, see [`readme
 
 ## 👤 Author
 
-**Samuel Dev**
-Submission for DWP Digital Front End Developer role
-Date: October 8, 2025
+**Samuel Antwi**
+Submission for DWP Digital Front End Developer role.
 
 ---
 
