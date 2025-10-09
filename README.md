@@ -127,7 +127,7 @@ All 8 acceptance criteria have been fully implemented:
 
 - Text input with "Send" button
 - POSTs to `http://localhost:8080/gemma2n/chat`
-  -Request format: `{ question: "<typed message>" }`
+  - Request format: `{ question: "<typed message>" }`
 - Implemented in: `src/app/api/chat/route.ts`
 
 ### AC5: Response Handling ✅

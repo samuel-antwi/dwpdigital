@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, KeyboardEvent } from "react";
+import { useState, FormEvent, KeyboardEvent, useRef, useEffect } from "react";
 import {
   validateMessage,
   MAX_MESSAGE_LENGTH,
@@ -21,6 +21,13 @@ export function MessageInput({
 }: MessageInputProps) {
   const [message, setMessage] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (!disabled) {
+      textareaRef.current?.focus();
+    }
+  }, [disabled]);
 
   const remaining = MAX_MESSAGE_LENGTH - message.length;
   const isOverLimit = remaining < 0;
@@ -67,6 +74,7 @@ export function MessageInput({
             Type your message
           </label>
           <textarea
+            ref={textareaRef}
             id="message-input"
             value={message}
             onChange={(e) => handleChange(e.target.value)}
@@ -78,13 +86,8 @@ export function MessageInput({
                        text-gray-900 placeholder:text-gray-400
                        focus:outline-none focus:ring-2
                        disabled:bg-gray-100 disabled:cursor-not-allowed
-                       ${error ? "border-red-500" : "border-gray-300"}
-                       ${isOverLimit ? "border-red-500" : ""}`}
-            style={{
-              ...(!(error || isOverLimit)
-                ? ({ "--tw-ring-color": "#1D71B8" } as React.CSSProperties)
-                : {}),
-            }}
+                       ${error ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-govuk-blue"}
+                       `}
             aria-invalid={!!error || isOverLimit}
             aria-describedby={error ? "message-error" : "character-count"}
           />
@@ -116,23 +119,11 @@ export function MessageInput({
           <button
             type="submit"
             disabled={disabled || isOverLimit}
-            className="px-6 py-2 cursor-pointer text-white font-semibold rounded-lg
-                     focus:outline-none focus:ring-4
-                     disabled:bg-gray-400 disabled:cursor-not-allowed
+            className="px-6 py-2 bg-govuk-blue hover:bg-govuk-blue-hover
+                     text-white font-semibold rounded-lg
+                     focus:outline-none focus:ring-4 focus:ring-govuk-blue
+                     disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:cursor-not-allowed
                      transition-colors duration-200"
-            style={
-              disabled || isOverLimit ? {} : { backgroundColor: "#1D71B8" }
-            }
-            onMouseEnter={(e) => {
-              if (!disabled && !isOverLimit) {
-                e.currentTarget.style.backgroundColor = "#155a94";
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!disabled && !isOverLimit) {
-                e.currentTarget.style.backgroundColor = "#1D71B8";
-              }
-            }}
           >
             Send
           </button>

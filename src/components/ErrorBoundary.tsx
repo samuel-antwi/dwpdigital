@@ -72,16 +72,10 @@ export class ErrorBoundary extends Component<
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-3 text-white font-semibold rounded-lg
-                       focus:outline-none focus:ring-4
+              className="px-6 py-3 bg-govuk-blue hover:bg-govuk-blue-hover
+                       text-white font-semibold rounded-lg
+                       focus:outline-none focus:ring-4 focus:ring-govuk-blue
                        transition-colors duration-200"
-              style={{ backgroundColor: "#1D71B8" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "#155a94")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "#1D71B8")
-              }
             >
               Refresh Page
             </button>

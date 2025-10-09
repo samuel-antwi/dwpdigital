@@ -52,18 +52,9 @@ export function ChatLog({ messages, isLoading = false }: ChatLogProps) {
                   </span>
                 </div>
                 <div className="flex gap-1 mt-2">
-                  <div
-                    className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"
-                    style={{ animationDelay: "0ms" }}
-                  />
-                  <div
-                    className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"
-                    style={{ animationDelay: "150ms" }}
-                  />
-                  <div
-                    className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"
-                    style={{ animationDelay: "300ms" }}
-                  />
+                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce-delay-0" />
+                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce-delay-150" />
+                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce-delay-300" />
                 </div>
               </div>
             </div>

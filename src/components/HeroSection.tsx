@@ -15,10 +15,10 @@ export default function HeroSection() {
         <div>
           <Link
             href="/chat"
-            className="inline-block px-8 py-4 text-white font-semibold text-lg rounded-lg
-                       focus:outline-none focus:ring-4 transition-colors duration-200
-                       hover:opacity-90 active:opacity-100"
-            style={{ backgroundColor: "#1D71B8" }}
+            className="inline-block px-8 py-4 bg-govuk-blue hover:bg-govuk-blue-hover
+                       text-white font-semibold text-lg rounded-lg
+                       focus:outline-none focus:ring-4 focus:ring-govuk-blue
+                       transition-colors duration-200"
           >
             Start Chatting
           </Link>

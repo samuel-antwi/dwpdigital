@@ -24,7 +24,7 @@ ASSUMPTIONS MADE
    - Assumed Enter key should submit message (with Shift+Enter for new line) as this is standard chat UX
    - Assumed input should be disabled during message processing to prevent duplicate submissions
    - Assumed loading state (animated dots) provides better feedback than no indicator
-   - Assumed timestamps are not required to be displayed to users (stored internally for message IDs)
+   - Assumed displaying timestamps for each message improves user experience and context
 
 5. API INTEGRATION APPROACH
    - Assumed the API route should proxy requests through Next.js rather than calling localhost:8080 directly from the browser
