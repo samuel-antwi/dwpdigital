@@ -36,6 +36,11 @@ app.post("/gemma2n/chat", (req, res) => {
 function generateResponse(question) {
   const q = question.toLowerCase();
 
+  // Handle greetings
+  if (q.includes("hello") || q.includes("hi") || q.includes("hey")) {
+    return "Hello! How can I help you with your career questions today?";
+  }
+
   if (q.includes("career") || q.includes("job")) {
     return "The National Careers Service offers free career advice and guidance to help you make decisions on learning and work.";
   }
@@ -57,7 +62,7 @@ function generateResponse(question) {
   }
 
   // Default response
-  return `Thank you for your question about "${question}". The National Careers Service offers free career advice and guidance. You can also find support through your local Jobcentre Plus office.`;
+  return "The National Careers Service offers free career advice and guidance. You can also find support through your local Jobcentre Plus office.";
 }
 
 // Health check endpoint

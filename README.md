@@ -93,7 +93,7 @@ src/
 │   ├── NavBar.tsx              # GOV.UK navigation header
 │   ├── HeroSection.tsx         # Home page hero section
 │   └── ErrorBoundary.tsx       # Error catching boundary
-├── libs/
+├── lib/
 │   └── mockApi.ts              # Mock response generator
 ├── utils/
 │   ├── api.ts                  # Client-side API helpers
@@ -267,7 +267,7 @@ Content-Type: application/json
 
 ### Mock Responses
 
-When the Gemma API is unavailable, the application uses mock responses defined in `src/libs/mockApi.ts`. These simulate realistic career guidance content and include a network delay (200-800ms) to mimic real API behavior.
+When the Gemma API is unavailable, the application uses mock responses defined in `src/lib/mockApi.ts`. These simulate realistic career guidance content and include a network delay (200-800ms) to mimic real API behavior.
 
 ## 🎯 Code Quality Standards
 

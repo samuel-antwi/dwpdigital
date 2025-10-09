@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getMockResponse } from "@/libs/mockApi";
+import { getMockResponse } from "@/lib/mockApi";
 
 const GEMMA_API_URL = "http://localhost:8080/gemma2n/chat";
 
