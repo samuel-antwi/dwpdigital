@@ -39,6 +39,7 @@ export async function POST(request: NextRequest) {
       }
 
       const data = await response.json();
+      console.log("Gemma API returned data:", data);
       return NextResponse.json(data);
     } catch (fetchError) {
       // Backend not available - use mock responses for demonstration
