@@ -67,7 +67,7 @@ export class ErrorBoundary extends Component<
               Something went wrong
             </h1>
             <p className="text-gray-600">
-              We're sorry, but something unexpected happened. Please try
+              We&apos;re sorry, but something unexpected happened. Please try
               refreshing the page.
             </p>
             <button

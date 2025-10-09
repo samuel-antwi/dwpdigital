@@ -72,7 +72,7 @@ The backend will start on `http://localhost:8080`. You can then test the full in
 - **Styling**: Tailwind CSS
 - **UI Components**: Custom React components
 - **Accessibility**: WCAG 2.2 AA compliant
-- **Testing**: Manual testing against acceptance criteria
+- **Testing**: Jest with React Testing Library
 
 ## 📁 Project Structure
 
@@ -186,6 +186,44 @@ All 8 acceptance criteria have been fully implemented:
 - **Validation errors**: Clear, actionable feedback
 
 ## 🧪 Testing the Application
+
+### Automated Tests
+
+The project includes unit and component tests using Jest and React Testing Library.
+
+**Run all tests:**
+```bash
+npm test
+```
+
+**Run tests in watch mode:**
+```bash
+npm run test:watch
+```
+
+**Generate coverage report:**
+```bash
+npm run test:coverage
+```
+
+**Test Coverage:**
+- ✅ **Validation Logic** (`src/utils/validation.ts`) - 100% coverage
+  - Empty message validation
+  - Character limit enforcement (100 chars)
+  - Whitespace trimming
+  - Edge cases and special characters
+
+- ✅ **Message Component** (`src/components/Message.tsx`)
+  - User vs bot message rendering
+  - Timestamp formatting
+  - Accessibility attributes
+  - Content handling (multiline, special chars)
+
+**Test Results:**
+```
+Test Suites: 2 passed, 2 total
+Tests:       40 passed, 40 total
+```
 
 ### Manual Testing Checklist
 

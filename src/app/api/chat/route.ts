@@ -15,9 +15,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    //For testing purposes, throw an error to test error handling
-    // throw new Error("Test error");
-
     // Attempt to POST to the Gemma API as specified in requirements
     try {
       const response = await fetch(GEMMA_API_URL, {
@@ -41,7 +38,7 @@ export async function POST(request: NextRequest) {
       const data = await response.json();
       console.log("Gemma API returned data:", data);
       return NextResponse.json(data);
-    } catch (fetchError) {
+    } catch {
       // Backend not available - use mock responses for demonstration
       // This allows the assessment to be reviewed without running a separate backend
       console.log(

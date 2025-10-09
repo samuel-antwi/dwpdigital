@@ -11,10 +11,10 @@ const MOCK_RESPONSES = [
 
 /**
  * Simulates an API call with a mock response
- * @param question - The user's question
+ * @param _question - The user's question (currently unused, returns random response)
  * @returns Promise resolving to a mock response
  */
-export async function getMockResponse(question: string): Promise<string> {
+export async function getMockResponse(_question: string): Promise<string> {
   // Simulate network delay (200-800ms)
   const delay = Math.random() * 600 + 200;
   await new Promise((resolve) => setTimeout(resolve, delay));

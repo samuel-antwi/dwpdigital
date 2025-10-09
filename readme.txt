@@ -43,7 +43,13 @@ ASSUMPTIONS MADE
    - Assumed chat messages should scroll independently within their container
    - This required careful flexbox layout with overflow management
 
-8. SCOPE & PRIORITIES
+8. TESTING APPROACH
+   - Implemented unit tests for critical business logic (validation) and component tests (Message component)
+   - Focused on testing pure functions and presentational components with high test coverage
+   - Assumed Jest with React Testing Library is the appropriate testing framework for Next.js projects
+   - Did not implement E2E tests or API route tests to keep scope manageable
+
+9. SCOPE & PRIORITIES
    - Assumed the focus is on demonstrating clean, maintainable, production-quality code
    - Did not implement features not mentioned in requirements (e.g., message history persistence, user authentication)
    - Focused on code quality and meeting requirements over additional features
