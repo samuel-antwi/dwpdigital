@@ -184,6 +184,16 @@ All 8 acceptance criteria have been fully implemented:
 - **Server errors**: Handled with user-friendly messages
 - **Rendering errors**: Caught by Error Boundaries
 - **Validation errors**: Clear, actionable feedback
+- **Request timeouts**: 10-second timeout with user-friendly error
+
+#### Testing Error Handling
+
+Even with mock data, you can test the error handling by typing special keywords:
+
+- **Type "error" or "fail"** → Simulates API errors
+- **Type "timeout"** → Simulates request timeout (exceeds 10s limit)
+
+These keywords trigger the error handling logic, demonstrating how the application gracefully handles failures.
 
 ## 🧪 Testing the Application
 
@@ -268,6 +278,8 @@ Tests:       40 passed, 40 total
 6. **Error Handling**
    - [ ] With backend running: verify real responses
    - [ ] Without backend: verify mock responses work
+   - [ ] Type "error" in chat → verify graceful error message appears
+   - [ ] Type "timeout" in chat → verify timeout handling (waits ~10s then shows error)
    - [ ] Check browser console for error logs
 
 ## 🔧 API Integration
@@ -306,6 +318,12 @@ Content-Type: application/json
 ### Mock Responses
 
 When the Gemma API is unavailable, the application uses mock responses defined in `src/lib/mockApi.ts`. These simulate realistic career guidance content and include a network delay (200-800ms) to mimic real API behavior.
+
+**Error Simulation**: The mock API includes special keywords to test error handling:
+- Messages containing "error" or "fail" trigger API error responses
+- Messages containing "timeout" trigger request timeouts
+
+This allows reviewers to verify error handling without needing to set up failure scenarios.
 
 ## 🎯 Code Quality Standards
 

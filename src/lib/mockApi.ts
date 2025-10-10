@@ -11,10 +11,29 @@ const MOCK_RESPONSES = [
 
 /**
  * Simulates an API call with a mock response
- * @param _question - The user's question (currently unused, returns random response)
+ * Supports error simulation for testing error handling:
+ * - Type "error" or "fail" to simulate API errors
+ * - Type "timeout" to simulate request timeout
+ *
+ * @param question - The user's question
  * @returns Promise resolving to a mock response
+ * @throws Error when specific keywords are detected (for testing)
  */
-export async function getMockResponse(_question: string): Promise<string> {
+export async function getMockResponse(question: string): Promise<string> {
+  const lowerQuestion = question.toLowerCase();
+
+  // Simulate API error for testing error handling
+  if (lowerQuestion.includes("error") || lowerQuestion.includes("fail")) {
+    await new Promise((resolve) => setTimeout(resolve, 500)); // Brief delay
+    throw new Error("Simulated API error - service temporarily unavailable");
+  }
+
+  // Simulate timeout for testing timeout handling
+  if (lowerQuestion.includes("timeout")) {
+    // Wait longer than the API timeout (10 seconds)
+    await new Promise((resolve) => setTimeout(resolve, 15000));
+  }
+
   // Simulate network delay (200-800ms)
   const delay = Math.random() * 600 + 200;
   await new Promise((resolve) => setTimeout(resolve, delay));
